@@ -1,0 +1,7 @@
+Fréquence de base : 
+T1 => 500Hz
+
+PR1 pour f = 5kHz :
+0d6 667
+0b0001 1010 0000 1010
+0x1A0A
