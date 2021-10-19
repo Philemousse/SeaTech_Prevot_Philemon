@@ -15,9 +15,14 @@ PR1 = 0b0011 0000 1101 0010
 PR1 = 0d12 498
 PR1 = 0x30D2
 
-PS, PR2 et PR3 pour 
+PS, PR2 et PR3 pour f = 0.5Hz :
 TKPS = 0b01
 PR3 = 0b0000 0000 1001 1000
 PR2 = 0b1001 0110 1000 0000
 
 Le courant absorbé par le moteur est égal à 0.22A en fonctionnement et augmente jusqu'à 0.30A lorsque freiné à la main.
+
+PS, PR2 et PR3 pour f = 1Hz :
+TKPS = 0b01
+PR3 = 0b0000 0000 1001 1000
+PR2 = 0b1001 0110 1000 0000
