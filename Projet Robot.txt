@@ -20,4 +20,4 @@ TKPS = 0b01
 PR3 = 0b0000 0000 1001 1000
 PR2 = 0b1001 0110 1000 0000
 
-
+Le courant absorbé par le moteur est égal à 0.22A en fonctionnement et augmente jusqu'à 0.30A lorsque freiné à la main.
