@@ -15,6 +15,32 @@ PR1 = 0b0011 0000 1101 0010
 PR1 = 0d12 498
 PR1 = 0x30D2
 
+PS, PR2 et PR3 pour 
 TKPS = 0b01
 PR3 = 0b0000 0000 1001 1000
 PR2 = 0b1001 0110 1000 0000
+
+
+
+#ifndef ROBOT_H
+#define ROBOT_H
+typedef struct robotStateBITS {
+union {
+
+struct {
+unsigned char taskEnCours;
+float vitesseGaucheConsigne;
+float vitesseGaucheCommandeCourante;
+float vitesseDroiteConsigne;
+float vitesseDroiteCommandeCourante;}
+;}
+;} ROBOT_STATE_BITS;
+
+extern volatile ROBOT_STATE_BITS robotState;
+#endif /* ROBOT_H */
+
+
+
+
+#include "robot.h"
+volatile ROBOT_STATE_BITS robotState;
