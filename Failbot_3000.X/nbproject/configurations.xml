@@ -8,6 +8,8 @@
       <itemPath>IO.h</itemPath>
       <itemPath>timer.h</itemPath>
       <itemPath>Robot.h</itemPath>
+      <itemPath>Toolbox.h</itemPath>
+      <itemPath>PWM.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -21,6 +23,8 @@
       <itemPath>IO.c</itemPath>
       <itemPath>timer.c</itemPath>
       <itemPath>Robot.c</itemPath>
+      <itemPath>Toolbox.c</itemPath>
+      <itemPath>PWM.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -36,7 +40,7 @@
         <targetDevice>dsPIC33EP512GM706</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>noID</platformTool>
+        <platformTool>ICD3PlatformTool</platformTool>
         <languageToolchain>XC16</languageToolchain>
         <languageToolchainVersion>1.60</languageToolchainVersion>
         <platform>3</platform>
@@ -248,6 +252,7 @@
         <property key="UART 3" value="true"/>
         <property key="UART 4" value="true"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="firmware.download.all" value="false"/>
         <property key="hwtoolclock.frcindebug" value="false"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="false"/>

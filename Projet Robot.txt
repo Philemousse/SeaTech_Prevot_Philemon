@@ -21,26 +21,3 @@ PR3 = 0b0000 0000 1001 1000
 PR2 = 0b1001 0110 1000 0000
 
 
-
-#ifndef ROBOT_H
-#define ROBOT_H
-typedef struct robotStateBITS {
-union {
-
-struct {
-unsigned char taskEnCours;
-float vitesseGaucheConsigne;
-float vitesseGaucheCommandeCourante;
-float vitesseDroiteConsigne;
-float vitesseDroiteCommandeCourante;}
-;}
-;} ROBOT_STATE_BITS;
-
-extern volatile ROBOT_STATE_BITS robotState;
-#endif /* ROBOT_H */
-
-
-
-
-#include "robot.h"
-volatile ROBOT_STATE_BITS robotState;

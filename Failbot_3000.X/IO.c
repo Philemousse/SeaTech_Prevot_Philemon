@@ -40,11 +40,15 @@ void InitIO()
 
     _TRISC10 = 0;  // LED Orange
 
-    _TRISG6 = 0; //LED Blanche
+    _TRISG6 = 0; // LED Blanche
 
     _TRISG7 = 0; // LED Bleue
 
     // Moteurs 
+    
+    _TRISB14 = 0; //Moteur 1 IN1 
+    
+    _TRISB15 = 0; //Moteur 2 IN2
 
 
 
