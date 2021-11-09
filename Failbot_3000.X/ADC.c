@@ -1,6 +1,5 @@
 #include <xc.h>
-#include « adc.h »
-#include « main.h »
+#include "adc.h"
 
 unsigned char ADCResultIndex = 0;
 static unsigned int ADCResult[4];
@@ -32,8 +31,6 @@ AD1CON2bits.CHPS = 0b00; // Converts CH0 only
 AD1CON2bits.SMPI = 2; // 2+1 conversions successives avant interrupt
 AD1CON2bits.ALTS = 0;
 AD1CON2bits.BUFM = 0;
-
- 
 
 /************************************************************/
 //AD1CON3
@@ -76,6 +73,7 @@ ADCResult[0] = ADC1BUF0;// Read the AN-scan input 1 conversion result
 ADCResult[1] = ADC1BUF1;// Read the AN3 conversion result
 ADCResult[2] = ADC1BUF2;// Read the AN5 conversion result
 ADCConversionFinishedFlag = 1;
+ADC1StartConversionSequence();
 }
 
 void ADC1StartConversionSequence()
