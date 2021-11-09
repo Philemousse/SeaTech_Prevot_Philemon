@@ -63,7 +63,7 @@ void PWMSetSpeed(float vitesseEnPourcents, int NUM) {
     }
 }
 
-/*
+
 void PWMUpdateSpeed()
 {
 // Cette fonction est appelée sur timer et permet de suivre des rampes d?accélération
@@ -73,7 +73,7 @@ robotState.vitesseDroiteCommandeCourante + acceleration,
 robotState.vitesseDroiteConsigne);
 if (robotState.vitesseDroiteCommandeCourante > robotState.vitesseDroiteConsigne)
 robotState.vitesseDroiteCommandeCourante = Max(
-robotState.vitesseDroiteCommandeCourante ? acceleration,
+robotState.vitesseDroiteCommandeCourante + acceleration,
 robotState.vitesseDroiteConsigne);
 
 if (robotState.vitesseDroiteCommandeCourante > 0)
@@ -96,7 +96,7 @@ robotState.vitesseGaucheCommandeCourante + acceleration,
 robotState.vitesseGaucheConsigne);
 if (robotState.vitesseGaucheCommandeCourante > robotState.vitesseGaucheConsigne)
 robotState.vitesseGaucheCommandeCourante = Max(
-robotState.vitesseGaucheCommandeCourante ? acceleration,
+robotState.vitesseGaucheCommandeCourante + acceleration,
 robotState.vitesseGaucheConsigne);
 
 if (robotState.vitesseGaucheCommandeCourante > 0)
@@ -113,4 +113,3 @@ MOTEUR_GAUCHE_L_PWM_ENABLE = 1; //Pilotage de la pin en mode PWM
 }
 MOTEUR_GAUCHE_DUTY_CYCLE = Abs(robotState.vitesseGaucheCommandeCourante) * PWMPER;
 }
-*/
