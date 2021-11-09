@@ -12,7 +12,7 @@ T2CONbits.TCS = 0; // Select internal instruction cycle clock
 T2CONbits.TCKPS = 0b00; // Select 1:1 Prescaler
 TMR3 = 0x00; // Clear 32-bit Timer (msw)
 TMR2 = 0x00; // Clear 32-bit Timer (lsw)
-PR3 = 152; // Load 32-bit period value (msw)
+PR3 = 1252; // Load 32-bit period value (msw)
 PR2 = 38528; // Load 32-bit period value (lsw)
 IPC2bits.T3IP = 0x01; // Set Timer3 Interrupt Priority Level
 IFS0bits.T3IF = 0; // Clear Timer3 Interrupt Flag
@@ -21,22 +21,21 @@ T2CONbits.TON = 1; // Start 32-bit Timer
 /* Example code for Timer3 ISR */
 }
 
-unsigned char toggle =0;
-
+int toggle = 0;
 //Interruption du timer 32 bits sur 2-3
 void __attribute__((interrupt, no_auto_psv)) _T3Interrupt(void) {
 IFS0bits.T3IF = 0; // Clear Timer3 Interrupt Flag
 LED_ORANGE = !LED_ORANGE;
 if (toggle == 0)
 {
-    PWMSetSpeed(20, MOTEUR_DROIT);
-    PWMSetSpeed(20, MOTEUR_GAUCHE);
+    PWMSetSpeedConsigne(30.0, MOTEUR_GAUCHE);
+    PWMSetSpeedConsigne(30.0, MOTEUR_DROIT);
     toggle = 1;
 }
 else
 {
-    PWMSetSpeed(-20, MOTEUR_DROIT);
-    PWMSetSpeed(-20, MOTEUR_GAUCHE);
+    PWMSetSpeedConsigne(-30.0, MOTEUR_GAUCHE);
+    PWMSetSpeedConsigne(-30.0, MOTEUR_DROIT);
     toggle = 0;
 }
 }
