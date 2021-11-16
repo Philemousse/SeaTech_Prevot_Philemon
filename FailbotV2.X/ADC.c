@@ -73,7 +73,6 @@ ADCResult[0] = ADC1BUF0;// Read the AN-scan input 1 conversion result
 ADCResult[1] = ADC1BUF1;// Read the AN3 conversion result
 ADCResult[2] = ADC1BUF2;// Read the AN5 conversion result
 ADCConversionFinishedFlag = 1;
-ADC1StartConversionSequence();
 }
 
 void ADC1StartConversionSequence()
