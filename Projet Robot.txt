@@ -43,3 +43,27 @@ PR2 = 0b0010 1101 0000 0000
 Le fonctionnement précédent n'est pas acceptable pour faire fonctionner un robot sans glissement au démarrage.
 
 L'utilisation du min et du max permet de saturer la vitesse à la consigne pour éviter qu'une vitesse non divisible par l'accélération ne cause des sauts de vitesse.
+
+La valeur max des IDC est 4095
+
+Pour des objets à 10, 20 et 30cm on obtient après le diviseur par 3.2:
+ADC1BUF0 = 0d902 = 0b001110000110
+ADC1BUF1 = 0d488 = 0b000111101000
+ADC1BUF2 = 0d128 = 0b000010000000
+
+Donc les valeurs réelles obtenues avant le diviseur sont :
+ADC1BUF0 = 0d2886
+ADC1BUF1 = 0d1562
+ADC1BUF2 = 0d410
+
+Et en V on a alors :
+
+2886/4095 * 3.1 = 2.2
+1562/4095 * 3.1 = 1.2
+410/4095 * 3.1 = 0.3
+
+Pour une détection à 20cm on a donc environ 0d408 et à 40cm on a donc environ 0d295 ce qui est cohérent avec le diagramme.
+
+Pour une détection inférieure à 10cm la valeur renvoyée par le capteur peut être plus faible que la valeur renvoyée lorsque d>=30cm, par conséquent il peut y avoir une erreur d'interprétation du programme.
+Après conversion des données enregistrées on clear le flag de conversion terminée et on traduit les valeurs float de result en distance. Puis on mets ces valeurs dans les variables de distance des objets détectés aux télémètres correspondants.
+

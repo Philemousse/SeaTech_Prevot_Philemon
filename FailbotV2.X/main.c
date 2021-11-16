@@ -57,9 +57,24 @@ while(1){
     {
         ADCClearConversionFinishedFlag();
         unsigned int * result = ADCGetResult();
-        unsigned int ADCValue0 = result[0];
-        unsigned int ADCValue1 = result[1];
-        unsigned int ADCValue2 = result[2];
+        float volts = ((float) result[2])*3.3 / 4095 * 3.2;
+        robotState.distanceTelemetreGauche = 34 / volts - 5;
+        volts = ((float) result[1])*3.3 / 4095 * 3.2;
+        robotState.distanceTelemetreCentre = 34 / volts - 5;
+        volts = ((float) result[0])*3.3 / 4095 * 3.2;
+        robotState.distanceTelemetreDroit = 34 / volts - 5;
+        if (robotState.distanceTelemetreDroit < 30)
+        {
+            LED_ORANGE = !LED_ORANGE;
+        }
+        if (robotState.distanceTelemetreCentre < 30)
+        {
+            LED_BLEUE = !LED_BLEUE;
+        }
+        if (robotState.distanceTelemetreGauche < 30)
+        {
+            LED_BLANCHE = !LED_BLANCHE;
+        }
     }
 }
 }
