@@ -11,6 +11,7 @@
       <itemPath>Robot.h</itemPath>
       <itemPath>Toolbox.h</itemPath>
       <itemPath>timer.h</itemPath>
+      <itemPath>main.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"

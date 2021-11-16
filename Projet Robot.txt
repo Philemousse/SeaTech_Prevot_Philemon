@@ -67,3 +67,6 @@ Pour une détection à 20cm on a donc environ 0d408 et à 40cm on a donc environ
 Pour une détection inférieure à 10cm la valeur renvoyée par le capteur peut être plus faible que la valeur renvoyée lorsque d>=30cm, par conséquent il peut y avoir une erreur d'interprétation du programme.
 Après conversion des données enregistrées on clear le flag de conversion terminée et on traduit les valeurs float de result en distance. Puis on mets ces valeurs dans les variables de distance des objets détectés aux télémètres correspondants.
 
+Ce réglage de TCKPS et PR1 est optimal car il permet une fréquence d'interruptions toujours maximale (et inférieure à 65635) pour chaque fréquence possible.
+
+Dans les deux dernières lignes du programme on s'assure qu'on ne puisse pas revenir à l'état précédent directement celui dans lequel on est lors d'une transition avant de l'effectuer.
