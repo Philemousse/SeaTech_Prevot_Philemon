@@ -235,7 +235,7 @@
         <property key="OUTPUT COMPARE 8" value="true"/>
         <property key="PARALLEL MASTER/SLAVE PORT" value="true"/>
         <property key="PTG" value="true"/>
-        <property key="PWM" value="true"/>
+        <property key="PWM" value="false"/>
         <property key="REAL TIME CLOCK AND CALENDAR" value="true"/>
         <property key="SPI 1" value="true"/>
         <property key="SPI 2" value="true"/>

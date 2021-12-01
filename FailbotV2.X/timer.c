@@ -94,7 +94,7 @@ ADC1StartConversionSequence();
 //Interruption du timer 4
 void __attribute__((interrupt, no_auto_psv)) _T4Interrupt(void)
 {
-IFS0bits.T1IF = 0;
+IFS1bits.T4IF = 0;
 timestamp = timestamp+1;
 OperatingSystemLoop();
 }
