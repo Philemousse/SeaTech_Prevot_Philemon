@@ -1,19 +1,7 @@
-/*
-
- * File:   IO.c
-
- */
-
-
-
 #include <xc.h>
-
 #include "IO.h"
 
-
-
 void InitIO()
-
 {
 
     // IMPORTANT : désactiver les entrées analogiques, sinon on perd les entrées numériques
@@ -57,6 +45,6 @@ void InitIO()
 
     //********** Configuration des entrées : _TRISxx = 1 ********************************   
 
-    
-
+    _U1RXR = 24 ; //Remappe l a RP . . . s u r l ?é e n t r e Rx1
+    _RP36R = 0b00001 ; //Remappe l a s o r t i e Tx1 v e r s RP . . .
 }

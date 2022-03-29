@@ -30,7 +30,7 @@
 
 void OperatingSystemLoop(void);
 void SetNextRobotStateInAutomaticMode(void);
-
+//void __delay32(long);
 
 #endif	/* MAIN_H */
 
