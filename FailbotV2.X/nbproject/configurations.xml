@@ -13,6 +13,8 @@
       <itemPath>timer.h</itemPath>
       <itemPath>main.h</itemPath>
       <itemPath>UART.h</itemPath>
+      <itemPath>CB_TX1.h</itemPath>
+      <itemPath>CB_RX1.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -30,6 +32,8 @@
       <itemPath>main.c</itemPath>
       <itemPath>timer.c</itemPath>
       <itemPath>UART.c</itemPath>
+      <itemPath>CB_TX1.c</itemPath>
+      <itemPath>CB_RX1.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -50,7 +54,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>ICD3PlatformTool</platformTool>
         <languageToolchain>XC16</languageToolchain>
-        <languageToolchainVersion>2.00</languageToolchainVersion>
+        <languageToolchainVersion>1.60</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
@@ -267,6 +271,7 @@
         <property key="debugoptions.debug-startup" value="Use system settings"/>
         <property key="debugoptions.reset-behaviour" value="Use system settings"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="firmware.download.all" value="false"/>
         <property key="hwtoolclock.frcindebug" value="false"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="false"/>

@@ -12,13 +12,13 @@ void InitUART(void)
     U1MODEbits.ABAUD = 0 ; // Auto?Baud Disabled
     U1MODEbits.BRGH = 1 ; // Low Speed mode
     U1BRG = BRGVAL; // BAUD Rate Setting
-    U1STAbits.UTXISEL0 = 0 ; // Interruptafter one Tx character is transmitted
+    U1STAbits.UTXISEL0 = 1; // Interruptafter one Tx character is transmitted
     U1STAbits.UTXISEL1 = 0;
     IFS0bits.U1TXIF = 0; // clear TX interrupt flag
-    IEC0bits.U1TXIE = 0; // Disable UART Tx interrupt
+    IEC0bits.U1TXIE = 1; // Disable UART Tx interrupt
     U1STAbits.URXISEL = 1; // Interrupt after one RX character is received;
     IFS0bits.U1RXIF = 0; // clear RX interruptflag
-    IEC0bits.U1RXIE = 0; // Disable UART Rx interrupt
+    IEC0bits.U1RXIE = 1; // Disable UART Rx interrupt
     U1MODEbits.UARTEN = 1; // Enable UART
     U1STAbits.UTXEN = 1; // Enable UART Tx
 }
@@ -34,22 +34,22 @@ void SendMessageDirect(unsigned char* message, int length)
 }
 
 // Interruption en mode loopback
-void __attribute__((interrupt, no_auto_psv)) _U1RXInterrupt (void)
-{
-    IFS0bits.U1RXIF = 0 ; // clear RX interrupt flag
-    /* check for receive errors */
-    if(U1STAbits.FERR == 1)
-    {
-        U1STAbits.FERR = 0;
-    }
-    /* must clear the over run error to keep uart receiving */
-    if(U1STAbits.OERR == 1)
-    {
-        U1STAbits.OERR = 0;
-    }
-    /* get the data */
-    while(U1STAbits.URXDA == 1)
-    {
-        U1TXREG = U1RXREG;
-    }
-}
+//void __attribute__((interrupt, no_auto_psv)) _U1RXInterrupt (void)
+//{
+//    IFS0bits.U1RXIF = 0 ; // clear RX interrupt flag
+//    /* check for receive errors */
+//    if(U1STAbits.FERR == 1)
+//    {
+//        U1STAbits.FERR = 0;
+//    }
+//    /* must clear the over run error to keep uart receiving */
+//    if(U1STAbits.OERR == 1)
+//    {
+//        U1STAbits.OERR = 0;
+//    }
+//    /* get the data */
+//    while(U1STAbits.URXDA == 1)
+//    {
+//        U1TXREG = U1RXREG;
+//    }
+//}
